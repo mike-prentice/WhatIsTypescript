@@ -2,7 +2,13 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
+
 function App() {
+  
+  
+  
+
+
   const form: HTMLFormElement = document.querySelector("#defineform");
   document.body.addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -16,12 +22,14 @@ function App() {
     fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + text)
       .then((response: Response) => response.json())
       .then(function (data) {
-        console.log(data);
+         console.log(data);
       })
       .catch((error) => console.log(error));
-    console.log(text);
+     console.log(text);
     return true; // prevent reload
   };
+
+
   return (
     <div className="App">
       <main className="container">
@@ -31,7 +39,7 @@ function App() {
             Use this part of the page to present your results from the API call.
           </p>
           <ul className="list-unstyled">
-            <li>This is a list. Your word could go here.</li>
+            <li>It appears completely unstyled</li>
             <li>It appears completely unstyled.</li>
             <li>Maybe your multiple definitions of the word are here?</li>
             <li>Structurally, it's still a list.</li>
@@ -55,3 +63,5 @@ function App() {
 }
 
 export default App;
+
+
