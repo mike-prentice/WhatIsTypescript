@@ -1,9 +1,8 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import axios from 'axios';
 import { useEffect, useState } from "react";
-
+const axios = require('axios');
 
 function App() {
   
@@ -45,7 +44,7 @@ function App() {
       //.catch((error) => console.log(error));
       //console.log(text);
         
-      , []);
+      ,[]);
 
   
     // prevent reload
@@ -54,14 +53,16 @@ function App() {
 
     return (
       <div className="App">
-        <main className="container">
+
+         <main className="container">
+          {def.map((def) => (
           <div className="bg-light p-5 rounded">
             <h1 className="defined">Definition</h1>
             <p className="lead">
-              Use this part of the page to present your results from the API call.
+            {def.meanings.noun}
             </p>
             <ul className="list-unstyled">
-              <li>{def}</li>
+              <li>Hello</li>
               <li>It appears completely unstyled.</li>
               <li>Maybe your multiple definitions of the word are here?</li>
               <li>Structurally, it's still a list.</li>
@@ -78,9 +79,10 @@ function App() {
               </li>
               <li>This may still come in handy in some situations.</li>
             </ul>
-          </div>
+           </div>
+           ))}
         </main>
-      </div>
+      </div> 
     );
   }
 
