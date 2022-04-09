@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
+import { render } from "@testing-library/react";
 const axios = require('axios');
 
 function App() {
@@ -53,34 +54,36 @@ function App() {
 
     return (
       <div className="App">
-
+    
          <main className="container">
-          {def.map((def) => (
+          
           <div className="bg-light p-5 rounded">
             <h1 className="defined">Definition</h1>
             <p className="lead">
-            {def.meanings.noun}
+            Random Text
             </p>
+            {def.map((def) => (
             <ul className="list-unstyled">
-              <li>Hello</li>
-              <li>It appears completely unstyled.</li>
-              <li>Maybe your multiple definitions of the word are here?</li>
-              <li>Structurally, it's still a list.</li>
+              <li>{def.word}</li>
+                <li>{def.phonetic}</li>
+              <li>{def.synonyms}</li>
+                <li>Random Text</li>
               <li>
                 However, this style only applies to immediate child elements.
               </li>
               <li>
                 Nested lists: (maybe synonyms and antonyms?)
                 <ul>
-                  <li>are unaffected by this style</li>
+                  <li></li>
                   <li>will still show a bullet</li>
                   <li>and have appropriate left margin</li>
                 </ul>
               </li>
               <li>This may still come in handy in some situations.</li>
-            </ul>
+              </ul>
+              ))}
            </div>
-           ))}
+           
         </main>
       </div> 
     );
