@@ -1,9 +1,9 @@
 // Import stylesheets
-let styles = require ("./style.css");
+let styles = require ("./style.module.css");
 
 const text = document.getElementById("defineword");
 const submit = document.getElementById("submit");
-// const form : HTMLFormElement = document.querySelector("#defineform");
+ //const form : HTMLFormElement = document.getElementById("#defineform");
 document.body.addEventListener("submit", async function (event) {
   event.preventDefault();
 });
@@ -22,8 +22,10 @@ submit.onclick = () => {
   // console.log(formData);
   // const text = formData.get("defineword") as string;
   fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + text)
-    .then((response: Response) => response.json())
-    .then((json) => json)
+    .then((response) => response.json())
+    .then((json) => {
+      return json;
+    })
     .catch((error) => console.log(error));
   return false; // prevent reload
 };

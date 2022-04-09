@@ -1,7 +1,0 @@
-{
-    "compilerOptions": {
-      "plugins": [{ "name": "typescript-plugin-css-modules" }]
-    },
-    //add the following
-    "include": ["src/**/*.ts", "declarations.d.ts"]
-  }
