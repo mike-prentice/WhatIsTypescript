@@ -60,22 +60,22 @@ function App() {
           <div className="bg-light p-5 rounded">
             <h1 className="defined">Definition</h1>
             <p className="lead">
-            Random Text
+           
             </p>
             {def.map((def) => (
             <ul className="list-unstyled">
               <li>{def.word}</li>
-                <li>{def.phonetic}</li>
-              <li>{def.synonyms}</li>
-                <li>Random Text</li>
+                <li>Phonetic: {def.phonetic}</li>
+              <li></li>
+                <li>Definition: {def.meanings[0].definitions[0].definition}</li>
               <li>
                 However, this style only applies to immediate child elements.
               </li>
               <li>
-                Nested lists: (maybe synonyms and antonyms?)
+                Synonyms and Antonyms
                 <ul>
-                  <li></li>
-                  <li>will still show a bullet</li>
+                  <li>Synonyms: {def.meanings[0].synonyms}</li>
+                  <li>Antonyms: {def.meanings[0].antonyms}</li>
                   <li>and have appropriate left margin</li>
                 </ul>
               </li>
